@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportsViewController">
+   <children>
+      <HBox prefHeight="50.0" prefWidth="1000.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="1000.0" text="Reports">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+         </children></HBox>
+      <HBox layoutY="50.0" prefHeight="200.0" prefWidth="1000.0">
+         <children>
+            <VBox prefHeight="300.0" prefWidth="550.0">
+               <children>
+                  <GridPane prefHeight="300.0" prefWidth="550.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="75.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="15.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="50.0" prefWidth="225.0" text="# of Appointments by type:">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="50.0" prefWidth="225.0" text="# of Appointments by month:" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="86.0" prefHeight="50.0" prefWidth="225.0" text="# of Customers per Country:" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <ComboBox fx:id="TypeComboBox" onAction="#ChangeTypeAction" prefWidth="150.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="MonthComboBox" onAction="#ChangeMonthAction" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="CountryComboBox" onAction="#ChangeCountryAction" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="TypeField" editable="false" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="MonthField" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="CountryField" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="400.0">
+               <children>
+                  <Label prefHeight="50.0" prefWidth="150.0" text="Customers by Country">
+                     <VBox.margin>
+                        <Insets left="150.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="CountryTableView" prefHeight="300.0" prefWidth="250.0">
+                    <columns>
+                      <TableColumn fx:id="CountryIDColumn" prefWidth="50.0" text="ID" />
+                      <TableColumn fx:id="CountryNameColumn" prefWidth="100.0" text="Name" />
+                        <TableColumn fx:id="CountryCountryColumn" prefWidth="75.0" text="Country" />
+                        <TableColumn fx:id="CountryStateColumn" prefWidth="100.0" text="State/Province" />
+                        <TableColumn fx:id="CountryPhoneColumn" prefWidth="75.0" text="Phone #" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+         </children></HBox>
+      <HBox layoutY="250.0" prefHeight="50.0" prefWidth="1000.0">
+         <children>
+            <GridPane prefWidth="400.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="50.0" prefWidth="225.0" text="Schedule for contact:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <ComboBox fx:id="ContactDropBox" onAction="#ContactDropBoxAction" prefWidth="155.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+               </children>
+            </GridPane>
+            <Button mnemonicParsing="false" onAction="#ExitReportButton" text="Exit Reports">
+               <HBox.margin>
+                  <Insets left="450.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutY="300.0" prefHeight="300.0" prefWidth="1000.0">
+         <children>
+            <TableView fx:id="ReportsTableView" prefHeight="300.0" prefWidth="1000.0">
+              <columns>
+                <TableColumn fx:id="AptIDColumn" prefWidth="50.0" text="Apt ID" />
+                <TableColumn fx:id="TitleColumn" prefWidth="125.0" text="Title" />
+                  <TableColumn fx:id="TypeColumn" prefWidth="125.0" text="Type" />
+                  <TableColumn fx:id="DescriptionColumn" prefWidth="275.0" text="Description" />
+                  <TableColumn fx:id="DateColumn" prefWidth="125.0" text="Date" />
+                  <TableColumn fx:id="StartTimeColumn" prefWidth="100.0" text="Start Time" />
+                  <TableColumn fx:id="EndTimeColumn" prefWidth="100.0" text="End Time" />
+                  <TableColumn fx:id="CustomerIDColumn" prefWidth="100.0" text="Customer ID" />
+              </columns>
+            </TableView>
+         </children></HBox>
+   </children>
+</AnchorPane>

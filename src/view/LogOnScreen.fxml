@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogOnScreenController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="800.0">
+         <children>
+            <Label fx:id="titleText" prefHeight="100.0" prefWidth="800.0" text="Scheduling Application">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="100.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <VBox prefHeight="350.0" prefWidth="200.0" translateX="200.0" translateY="50.0">
+         <children>
+            <TextField fx:id="UsernameField" translateY="150.0" />
+            <PasswordField fx:id="PasswordField" translateY="175.0" />
+            <ButtonBar prefHeight="40.0" prefWidth="200.0" translateY="200.0">
+              <buttons>
+                <Button fx:id="LogInButton" mnemonicParsing="false" onAction="#LogInEvent" text="Log In" />
+                  <Button fx:id="ExitButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#ExitEvent" prefHeight="25.0" prefWidth="100.0" text="Exit" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </VBox>
+      <VBox layoutY="55.0" prefHeight="350.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="usernameText" alignment="TOP_CENTER" prefHeight="25.0" prefWidth="100.0" text="Username" translateX="75.0" translateY="150.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="passwordText" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="100.0" text="Password" translateX="75.0" translateY="175.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="locationText" prefHeight="20.0" prefWidth="50.0" text="Location:" translateY="275.0">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+            <Label fx:id="CurrentLocation" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" text="Current Location" translateX="50.0" translateY="255.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
